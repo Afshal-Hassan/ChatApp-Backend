@@ -25,7 +25,7 @@ module.exports={
                 }
                 else
                 {
-                    return res.send(new GenericResponse("List of Friends given User",result));
+                    return res.send(new GenericResponse("List of Friends of given User",result));
                 }
             });
         })
