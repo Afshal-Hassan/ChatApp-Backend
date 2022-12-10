@@ -2,8 +2,8 @@ const mysql=require("mysql");
 const mySqlConnnection = mysql.createConnection({
     host:"127.0.0.1",
     port:"3306",
-    user:"afshal",
-    password:"afshal",
+    user:"root",
+    password:"root",
     database:"chatapp"
 });
 
