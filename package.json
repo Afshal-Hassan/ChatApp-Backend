@@ -9,7 +9,7 @@
     "validator": "^13.7.0"
   },
   "scripts": {
-    "start": "node src/App.js",
+    "start": "NODE_ENV=production node src/App.js",
     "dev": "nodemon src/App.js"
   }
 }
