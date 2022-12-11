@@ -1,10 +1,13 @@
 const mysql=require("mysql");
 const mySqlConnnection = mysql.createConnection({
-    host:"127.0.0.1",
-    port:"3306",
-    user:"root",
-    password:"root",
-    database:"chatapp"
+    host : 'node-js-aws-rds.ciqmjhvfx2pw.ap-northeast-1.rds.amazonaws.com',
+    port : '3306',
+    user : 'afshal',
+    password : 'afshal123.',
+    database : 'chatapp'
+
+    
+
 });
 
 mySqlConnnection.connect((err)=>{
