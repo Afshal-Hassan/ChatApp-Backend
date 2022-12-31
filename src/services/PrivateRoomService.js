@@ -13,7 +13,7 @@ module.exports = {
        }
        
         
-        db.query(`SELECT room_id from private_rooms pr where pr.user_1_id = (select u.user_id from user u where u.email= ? ) or pr.user_1_id =(select u.user_id from user u where u.email= ? ) and pr.user_2_id = (select u.user_id from user u where u.email= ? ) or pr.user_2_id = (select u.user_id from user u where u.email= ? );`,[emails.firstUserEmail,emails.secondUserEmail,emails.firstUserEmail,emails.secondUserEmail], (error, result, fields) => {
+        db.query(`SELECT room_id from private_rooms pr where (pr.user_1_id = (select u.user_id from user u where u.email= ? ) or pr.user_1_id =(select u.user_id from user u where u.email= ? )) and (pr.user_2_id = (select u.user_id from user u where u.email= ? ) or pr.user_2_id = (select u.user_id from user u where u.email= ? ));`,[emails.firstUserEmail,emails.secondUserEmail,emails.firstUserEmail,emails.secondUserEmail], (error, result, fields) => {
             if (error) {
                 console.log(error);
             }

@@ -10,9 +10,4 @@ module.exports = {
         return res.send(response);
     
     },
-
-
-    
-
-
 };
