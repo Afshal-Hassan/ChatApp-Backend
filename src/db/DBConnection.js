@@ -4,7 +4,8 @@ const mySqlConnnection = mysql.createConnection({
     port : '3306',
     user : 'afshal',
     password : 'afshal123.',
-    database : 'chatapp'
+    database : 'chatapp',
+    charset: 'utf8mb4'
 
     
 
