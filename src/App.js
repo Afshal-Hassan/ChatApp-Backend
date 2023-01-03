@@ -19,6 +19,8 @@ app.use(cors());
 const userRouter = require("./routes/User") ;
 const friendRouter = require("./routes/Friend");
 const privateRoomsRouter = require("./routes/PrivateRoom");
+const messageRouter = require("./routes/Messages");
+const messageController = require("./controllers/MessageController");
 
 
 
@@ -26,6 +28,7 @@ const privateRoomsRouter = require("./routes/PrivateRoom");
 app.use("",userRouter);
 app.use("",friendRouter);
 app.use("",privateRoomsRouter);
+app.use("",messageRouter);
 
 
 
@@ -44,6 +47,7 @@ io.on("connection",(socket)=>{
     socket.on("send-message",(data)=>{
         console.log(data);
         socket.to(data.room).emit("receive-message",data);
+        messageController.SaveMessages(data);
     })
 });
 
