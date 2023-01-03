@@ -6,7 +6,7 @@ const UserService = require("../services/UserService");
 module.exports = {
     
     GetAllFriendsOfUser: (req,res)=>{
-        db.query("SELECT user_friend_id from friends f INNER JOIN user u ON u.user_id=f.user_id",async(error,result)=>{
+        db.query("SELECT user_friend_id from friends f INNER JOIN user u ON u.user_id=f.user_id where f.user_id = (select user_id from user where email = ?)",[req.params.user],async(error,result)=>{
                 if(error)
                 {
                     console.log(error);
