@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const FriendController = require("../controllers/FriendController");
-
-router.get("/all-friends/of-user/:user",FriendController.GetAllFriendsOfUser);
+const cacheService = require("express-api-cache");
+const cache = cacheService.cache;
+router.get("/all-friends/of-user/:user",cache("15 minutes"),FriendController.GetAllFriendsOfUser);
 
 module.exports = router;
