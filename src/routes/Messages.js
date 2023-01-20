@@ -5,6 +5,6 @@ const cacheService = require("express-api-cache");
 const cache = cacheService.cache;
 
 router.post("/messages/save",MessageController.SaveMessages);
-router.get("/messages/:clickByUserEmail/:clickOnUserEmail",cache("15 minutes"),MessageController.GetMessages);
+router.get("/messages/:clickByUserEmail/:clickOnUserEmail",MessageController.GetMessages);
 
 module.exports = router;
