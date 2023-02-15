@@ -1,11 +1,11 @@
 const mysql=require("mysql");
 const mySqlConnnection = mysql.createConnection({
-    host : 'node-js-aws-rds.ciqmjhvfx2pw.ap-northeast-1.rds.amazonaws.com',
+    host : 'database-1.cqseadaorxhc.ap-south-1.rds.amazonaws.com',
     port : '3306',
     user : 'afshal',
     password : 'afshal123.',
     database : 'chatapp',
-    charset: 'utf8mb4'
+    charset: "utf8mb4"
 
     
 

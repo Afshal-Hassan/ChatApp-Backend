@@ -1,4 +1,3 @@
-const res = require("express/lib/response");
 const db = require("../db/DBConnection");
 const GenericResponse = require("../dto/GenericResponse");
 
@@ -12,7 +11,7 @@ module.exports = {
             }
             else
             {
-                return res.send(new GenericResponse("Data sended",null));
+                return (new GenericResponse("Data sended",null));
             }
         })
     },

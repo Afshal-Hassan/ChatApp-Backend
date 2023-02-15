@@ -1,4 +1,3 @@
-const res = require("express/lib/response");
 const db = require("../db/DBConnection");
 const GenericResponse = require("../dto/GenericResponse");
 const UserService = require("../services/UserService");
